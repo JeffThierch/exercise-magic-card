@@ -26,6 +26,7 @@ describe(' Testa a função getMagicCard', () => {
 
     expect(favoriteCards).toHaveLength(4);
     // implemente seus testes aqui
-
+    const expected = favoriteCards.map(({name: cardName}) => cardName)
+    console.log(expected);
   });
 });
