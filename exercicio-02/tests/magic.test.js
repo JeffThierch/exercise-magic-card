@@ -22,11 +22,12 @@ describe(' Testa a função getMagicCard', () => {
   });
 
   it('Deve retornar favoriteCards contendo apenas os cards favoritos iniciais', () => {
-    expect.assertions(1);
+    expect.assertions(2);
 
     expect(favoriteCards).toHaveLength(4);
     // implemente seus testes aqui
     const expected = favoriteCards.map(({name: cardName}) => cardName)
-    console.log(expected);
+    
+    expect(expected).toEqual(['Ancestor\'s Chosen', 'Angel of Mercy', 'Aven Cloudchaser', 'Ballista Squad'])
   });
 });
