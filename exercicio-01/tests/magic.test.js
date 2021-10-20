@@ -11,7 +11,7 @@ const expected = {
 
 describe(' Testa a função getMagicCard', () => {
   it('Deve retornar um objeto com as propriedades esperadas', async () => {
-    expect.assertions(3);
+    expect.assertions(5);
     const getMagicCardSimulator = trybeSimulator(magic, 'getMagicCard');
     const usedTest = await getMagicCardSimulator('130550');
 
@@ -19,6 +19,8 @@ describe(' Testa a função getMagicCard', () => {
    expect(usedTest).toMatchObject(expected)
    expect(Array.isArray(usedTest.types)).toBeTruthy()
    expect(usedTest.subtypes.length).toBe(2)
+   expect(usedTest.rarity).toMatch('Uncommon')
+   expect(usedTest.name).toMatch("Ancestor's Chosen")
   });
 });
 
